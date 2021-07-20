@@ -1,0 +1,59 @@
+ABM Sist Operativo
+- No permitir ingresar una descripción de SO con los mismos datos de sistema operativo 
+- Agregar al campo versión una validación javascript 
+- Agregar al campo versión validación de PHP (si espera un decimal, chequear que sea decimal)
+
+Trabajo Final19:45
+Consulta, corregir los siguientes puntos 
+- El orden no funciona (si selecciona orden sistema operativo, queda seleccionado estado) y no ordena 
+- En la exportación a Excel agregar la descripción del filtro seleccionada
+- En la vista de impresión, se ve el menú, no mostrarlo,  usar css 
+*Filtro de orden
+
+-----------------------------------------------
+
+Si sisop existe
+	error (No puede ingresar 2 veces el mismo sistema)
+sino
+	agregar
+
+--------------------------------------------------
+
+<script>
+	si version = ""{
+		alert("Debe ingresar una version")
+	}
+</script>
+
+--------------------------------------------------
+
+<fieldset> 
+<legend>Opciones</legend>
+<?=$lista_c?> &nbsp; &nbsp;
+<label for="creacion">Desde:</label>
+<input type="text" id="creacion" name="creacion" value="<?php if (!is_null($creacion)){?><?=trim(date("d/m/Y", strtotime($creacion)))?><?php }?>" size="6" maxlength="10" title="Fecha ingreso - formato: dd/mm/aaaa">
+<span style="font-size:0.8em;color:#666;font-weight:normal; padding-left:10;">(dd/mm/aaaa)</span>
+<span>Orden: </span>
+<input type="radio" name="orden" id="orden1" value="1" <?php if ($orden==1) {?> checked="checked" <?php }?>> 
+<label for="orden1">Sistema operativo</label>
+<input type="radio" name="orden" id="orden2" value="2" <?php if ($orden==2) {?> checked="checked" <?php }?>> 
+<label for="orden2">Estado actual</label>
+<input type="submit" id="Mostrar" name="Mostrar" value="Mostrar Listado">
+</fieldset>	
+
+<?php
+	$version = $_REQUEST["version"];
+
+	if (ctype_digit($version)) {
+    		print "<p>Ha escrito una version decimal: $version.</p>\n";
+	} else {
+    		print "<p>NO ha escrito una version decimal: $version.</p>\n";
+}
+?>
+
+-------------------------------------------------------
+
+falta <p class="constit1"><?=$titfiltro?></p> en el excel
+
+---------------------------------------------------------
+

@@ -1,0 +1,26 @@
+Hola Danilo, te paso algunos ítems a revisar.
+Falta la documentación del sitio, el esquema de tablas debe estar incluido en la misma  
+(en la descripción del proyecto está indicado que incluir en la documentación)
+El sitio tiene que responder a una temática y mostrar contenido asociado al mismo. No es 
+necesario que se agreguen las actividades de cursadas y documentos.
+El menú de la página inicial confunde, no se sabe que se puede ver hasta que no se hace 
+clic en el botón correspondiente, por ejemplo dice script 1, 2 y 3, al hacer clic se puede 
+ver que muestra datos de la historia de los SO ( debería tener un título relacionado al contenido).
+La BD tiene que ser consistente con el sitio que se desarrolló, las tablas 'trabaja' y 'cargo' no 
+tienen relación con el sitio.
+
+ABM de Sistema Operativos:
+   - En el alta da un error (Undefined variable: modificarTipo)
+   - No tiene que permitir que se pueda dar de alta un sistema operativo/versión que ya existe
+   - Falta validación en javascript
+   - Falta validación de los datos  que se esperan en PHP
+   - da error en la consulta de Modificar
+   - cuando se modifica hay que chequear que los datos modificados no correspondan a otro registro 
+     que ya existe en la BD.
+
+Modificar Tipo asociado al SO
+     - porque muestra un input para la fecha, si ese campo no está relacionado con el tipo del SO?
+
+ABM de tipo  -  Falta
+
+Slds, Leticia 
